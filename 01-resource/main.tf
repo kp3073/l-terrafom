@@ -6,3 +6,12 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+
+resource "aws_route53_record" "www" {
+  zone_id = Z01410302C88NUPGSJO5X
+  name    = "test.aligntune.com"
+  type    = "A"
+  ttl     = 300
+  records = [aws_instance.web.private_ip]
+}
