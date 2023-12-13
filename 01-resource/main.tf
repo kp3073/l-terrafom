@@ -9,7 +9,7 @@ resource "aws_instance" "web" {
 
 
 resource "aws_route53_record" "www" {
-  zone_id = Z01410302C88NUPGSJO5X
+  zone_id = "Z01410302C88NUPGSJO5X"
   name    = "test.aligntune.com"
   type    = "A"
   ttl     = 300
