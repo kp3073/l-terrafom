@@ -26,7 +26,7 @@ resource "aws_instance" "backend" {
   }
 }
 
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "backend" {
   zone_id = "Z01410302C88NUPGSJO5X"
   name    = "backend.aligntune.com"
   type    = "A"
