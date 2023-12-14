@@ -3,20 +3,17 @@ variable "fruit" {
 }
 
 variable "fruits" {
-  default = [ "apple" , "banana" ]
+  default = ["apple" , "banana" ]
 }
 
-variable "fruits_price" {
+variable "price" {
   default = {
-  apple = 10
+    apple = 10
     banana = 20
   }
 }
 
-output "fruit" {
-  value = var.fruit
-}
 
-output "first_fruit" {
-  value = var.fruits[1]
+output "priceoffruit" {
+  value = var.fruit
 }
