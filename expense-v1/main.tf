@@ -26,12 +26,20 @@ resource "aws_route53_record" "frontend1" {
 }
 
 resource "aws_instance" "backend1" {
-  ami           = data.aws_ami.ami.image_id
-  instance_type = "t3.micro"
+  ami                    = data.aws_ami.ami.image_id
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.sg.id]
 
   tags = {
     Name = "backend1"
+  }
+  provisioner "local-exec" {
+    command = <<EOF
+cd /root/first-ansible
+git pull
+sleep 90
+ ansible-playbook -i ${self.private_ip}, -e ansible_username=centos -e ansible_passowrd=DevOps321 backend.yaml
+EOF
   }
 }
 
@@ -44,12 +52,20 @@ resource "aws_route53_record" "backend1" {
 }
 
 resource "aws_instance" "mysql1" {
-  ami           = data.aws_ami.ami.image_id
-  instance_type = "t3.micro"
+  ami                    = data.aws_ami.ami.image_id
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [data.aws_security_group.sg.id]
 
   tags = {
     Name = "mysql1"
+  }
+  provisioner "local-exec" {
+    command = <<EOF
+cd /root/first-ansible
+git pull
+sleep 90
+ ansible-playbook -i ${self.private_ip}, -e ansible_username=centos -e ansible_passowrd=DevOps321 mysql.yaml
+EOF
   }
 }
 
