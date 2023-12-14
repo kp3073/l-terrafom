@@ -14,5 +14,5 @@ variable "fruits_price" {
 }
 
 output "fruit" {
-  value = "var.fruit"
+  value = var.fruit
 }
