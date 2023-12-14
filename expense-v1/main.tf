@@ -44,7 +44,7 @@ resource "aws_instance" "mysql" {
   }
 }
 
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "mysql" {
   zone_id = "Z01410302C88NUPGSJO5X"
   name    = "mysql.aligntune.com"
   type    = "A"
