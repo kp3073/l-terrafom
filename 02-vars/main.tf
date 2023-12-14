@@ -15,5 +15,5 @@ variable "price" {
 
 
 output "fruit_price" {
-  value = "price of apple = ${var.fruit_price["apple"] }"
+  value = "price of apple = ${var.price["apple"] }"
 }
