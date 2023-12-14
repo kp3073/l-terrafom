@@ -5,7 +5,7 @@ data "aws_ami" "ami" {
 }
 
 data "aws_security_group" "sg" {
-  id = "ALLOW-ALL"
+  name = "ALLOW-ALL"
 }
 
 data "aws_route53_zone" "zone" {
