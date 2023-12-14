@@ -8,7 +8,7 @@ resource "aws_instance" "frontend1" {
   }
 }
 
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "frontend1" {
   zone_id = "Z01410302C88NUPGSJO5X"
   name    = "frontend1.aligntune.com"
   type    = "A"
@@ -22,7 +22,7 @@ resource "aws_instance" "backend1" {
   vpc_security_group_ids = ["sg-0fe6f5f4a7cf08436"]
 
   tags = {
-    Name = "backend"
+    Name = "backend1"
   }
 }
 
