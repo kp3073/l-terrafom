@@ -14,6 +14,6 @@ variable "price" {
 }
 
 
-output "priceoffruit" {
-  value = var.fruits[01]
+output "priceof" {
+  value = var.price
 }
