@@ -15,5 +15,5 @@ variable "price" {
 
 
 output "priceoffruit" {
-  value = var.fruit
+  value = var.fruits[01]
 }
