@@ -5,7 +5,10 @@ variable "userage" {
     "birva" = 30
   }
 }
+variable "username" {
+  type = string
+}
 
 output "ageofuser" {
-  value = "my name is Birva and my age is ${lookup(var.userage, "birva" )}"
+  value = "my name is $(var.username} and my age is ${lookup(var.userage, "$(var.username}" )}"
 }
