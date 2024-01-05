@@ -12,5 +12,5 @@ output "firstname" {
 }
 
 output "third" {
-  value = "first name is ${lower(var.names[1])}"
+  value = "first name is ${lower(var.names[2])}"
 }
