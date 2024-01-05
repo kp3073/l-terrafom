@@ -1,5 +1,5 @@
 variable "name" {
-  default = keyur
+  default = "keyur"
 }
 
 variable "number" {
