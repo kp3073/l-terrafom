@@ -4,7 +4,7 @@ token="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"
 
 
 
-resource "github_repository" "example" {
+resource "github_repository" "terraforminit" {
   name        = "example"
   description = "My awesome codebase"
 
