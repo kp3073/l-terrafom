@@ -1,5 +1,5 @@
 variable "name" {}
 
 output "thiswillprintvariable" {
-  value = var.name
+  value = "my name is :${var.name}"
 }
