@@ -4,5 +4,5 @@ variable "names" {
 }
 
 output "firstname" {
-  value = "first name is ${upper(var.names[1])}"
+  value = "first name is ${title(var.names[1])}"
 }
