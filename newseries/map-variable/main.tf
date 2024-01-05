@@ -1,8 +1,8 @@
 variable "userage" {
   type = map(number)
   default = {
-    keyur = 33
-    birva = 30
+    "keyur" = 33
+    "birva" = 30
   }
 }
 
