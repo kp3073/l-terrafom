@@ -41,7 +41,7 @@ sleep 90
  ansible-playbook -i ${self.private_ip}, -e ansible_username=centos -e ansible_passowrd=DevOps321 backend.yaml
 EOF
   }
-}
+} 
 
 resource "aws_route53_record" "backend1" {
   zone_id = data.aws_route53_zone.zone.zone_id
