@@ -1,8 +1,5 @@
-provider "github" {
-
- }
-
-
+provider "github"
+{}
 
 resource "github_repository" "terraforminit" {
   name        = "example"
