@@ -4,5 +4,5 @@ variable "names" {
 }
 
 output "firstname" {
-  value = "first name is ${var.names[0]}"
+  value = "first name is ${var.names[0][1]}"
 }
