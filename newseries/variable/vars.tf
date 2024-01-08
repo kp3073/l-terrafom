@@ -3,5 +3,5 @@ variable "name" {
 }
 
 variable "number" {
-  default = 89
+  default=89
 }
