@@ -10,17 +10,14 @@ resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
+    ingress {
+      from_port   = 443
+      to_port     = 443
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
   }
 
-resource "aws_security_group" "allow_tls" {
-# ... other configuration ...
-  ingress {
-from_port = 443
-to_port = 443
-protocol = "tcp"
-cidr_blocks = ["0.0.0.0/0"]
-}
-}
 ### creating EC2
 #
 #resource "aws_instance" "devops" {
