@@ -11,7 +11,7 @@ resource "aws_security_group" "allow_tls" {
   description = "Allow TLS inbound traffic and all outbound traffic"
 
   dynamic "ingress" {
-    for_each = "[22,443,8080,3306,27017]"
+    for_each = [22,443,8080,3306,27017]
     iterator = new
     content {
       from_port   = new.value
