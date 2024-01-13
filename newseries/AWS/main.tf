@@ -14,8 +14,7 @@ resource "aws_security_group" "allow_tls" {
 
 resource "aws_security_group" "example" {
 # ... other configuration ...
-
-egress {
+  ingress {
 from_port = 443
 to_port = 443
 protocol = "tcp"
