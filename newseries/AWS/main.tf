@@ -24,7 +24,7 @@ resource "aws_security_group" "allow_tls" {
 
 ### creating EC2
 
-resource "aws_instance" "devops" {
+resource "aws_instance" "new" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.allow_tls.id}"]
