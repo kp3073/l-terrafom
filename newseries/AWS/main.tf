@@ -1,9 +1,9 @@
 ### creating ssh-key
 #
-#resource "aws_key_pair" "id_key" {
-#  key_name   = "id_key"
-#  public_key = file("${path.module}/id.key.pub")
-#}
+resource "aws_key_pair" "id_key" {
+  key_name   = "id_key"
+  public_key = file("${path.module}/id.key.pub")
+}
 
 ## creating security group
 resource "aws_security_group" "allow_tls" {
@@ -22,16 +22,12 @@ resource "aws_security_group" "allow_tls" {
   }
 }
 
-output "nameofSecurityGroup" {
-  value = aws_security_group.allow_tls.id
+### creating EC2
+
+resource "aws_instance" "devops" {
+  ami           = "ami-03265a0778a880afb"
+  instance_type = "t2.micro"
+  security_groups = ["${aws_security_group.allow_tls.id}"]
+  key_name = aws_key_pair.id_key.key_name
 }
 
-
-### creating EC2
-#
-#resource "aws_instance" "devops" {
-#  ami           = "ami-03265a0778a880afb"
-#  instance_type = "t2.micro"
-#  key_name = aws_key_pair.id_key.key_name
-#}
-#
