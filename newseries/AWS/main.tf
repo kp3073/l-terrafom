@@ -22,6 +22,10 @@ resource "aws_security_group" "allow_tls" {
   }
 }
 
+output "nameofSecurityGroup" {
+  value = aws_security_group.allow_tls.id
+}
+
 
 ### creating EC2
 #
