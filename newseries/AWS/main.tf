@@ -27,7 +27,7 @@ resource "aws_security_group" "allow_tls" {
 resource "aws_instance" "hi" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.micro"
-  security_groups = "aws_security_group.allow_tls.id"
+  security_groups =["${aws_security_group.allow_tls.id}"]
   key_name = "aws_key_pair.id_key.key_name"
 
 }
