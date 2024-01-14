@@ -29,6 +29,6 @@ resource "aws_instance" "hi" {
   instance_type = "t3.micro"
   security_groups = [aws_security_group.allow_tls.id]
   key_name = aws_key_pair.id_key.key_name
-  vpc_security_group_ids = [vpc-03dbf46cce445afd3]
+  vpc_security_group_ids = "vpc-03dbf46cce445afd3"
 }
 
