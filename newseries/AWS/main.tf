@@ -5,6 +5,10 @@ resource "aws_key_pair" "id_newkey" {
   public_key = file("${path.module}/id.newkey.pub")
 }
 
+output "pubkey" {
+  value = ["${path.module}"]
+}
+
 ## creating security group
 resource "aws_security_group" "allow_pots" {
   name        = "allow_ports"
