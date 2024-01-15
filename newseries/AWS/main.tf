@@ -1,14 +1,14 @@
 #### creating ssh-key
 ##
 resource "aws_key_pair" "id_key" {
-  key_name   = "id_key"
-  public_key = file("${path.module}/id.key.pub")
+  key_name   = "id_newkey"
+  public_key = file("${path.module}/id.newkey.pub")
 }
 
 ## creating security group
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic and all outbound traffic"
+resource "aws_security_group" "allow_pots" {
+  name        = "allow_ports"
+  description = "Allow PORTS inbound traffic and all outbound traffic"
 
   dynamic "ingress" {
     for_each = [22, 443, 8080, 3306, 27017]
@@ -27,7 +27,7 @@ resource "aws_security_group" "allow_tls" {
 resource "aws_instance" "hi" {
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.micro"
-  security_groups =["${aws_security_group.allow_tls.id}"]
+  vpc_security_group_ids = ["${aws_security_group.allow_pots.id}"]
   key_name = "aws_key_pair.id_key.key_name"
 
 }
