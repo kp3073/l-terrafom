@@ -8,5 +8,5 @@
 #}
 
 output "filelocation" {
-  value = "${path.module}"
+  value = "${path.module}/rnd.txt"
 }
