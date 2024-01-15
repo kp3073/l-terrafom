@@ -1,12 +1,7 @@
 #### creating ssh-key
-##
-resource "aws_key_pair" "id_newkey" {
-  key_name   = "id_newkey"
-  public_key = file("${path.module}/id.newkey.pub")
-}
-
-output "pubkey" {
-  value = ["${path.module}"]
+resource "aws_key_pair" "key" {
+  key_name = "id_newkey"
+  public_key = ["file(${path.module}/id_newkey.pub)"]
 }
 
 ## creating security group
