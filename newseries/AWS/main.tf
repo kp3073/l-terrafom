@@ -1,6 +1,6 @@
 #### creating ssh-key
 ##
-resource "aws_key_pair" "id_key" {
+resource "aws_key_pair" "id_newkey" {
   key_name   = "id_newkey"
   public_key = file("${path.module}/id.newkey.pub")
 }
