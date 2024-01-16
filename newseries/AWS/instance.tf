@@ -6,6 +6,10 @@ resource "aws_instance" "keyur" {
   instance_type          = var.machine_type
   vpc_security_group_ids = ["${aws_security_group.allow_pots.id}"]
   key_name               = aws_key_pair.key.key_name
-
+  user_data = <<EOF
+  #!/bin/bash
+  sudo dnf install nginx -y
+  sudo echo "THIS IS KEYUR TERRAFORM LEARNING" > /usr/share/nginx/html
+  EOF
 }
 
