@@ -1,8 +1,4 @@
-provider "aws" {
-  region = "us-east-1"
-  access_key = "AKIAW3MEBXR2JO4UNZZ4"
-  secret_key = "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"
-}
+
 #### creating ssh-key
 resource "aws_key_pair" "key" {
   key_name = "key"
