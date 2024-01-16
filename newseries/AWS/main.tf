@@ -25,7 +25,7 @@ resource "aws_security_group" "allow_pots" {
 ### creating EC2
 
 resource "aws_instance" "keyur" {
-  ami                    = ami-03265a0778a880afb
+  ami                    = "ami-03265a0778a880afb"
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["${aws_security_group.allow_pots.id}"]
   key_name               = aws_key_pair.key.key_name
