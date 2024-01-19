@@ -16,7 +16,7 @@ provisioner "file" {
   connection {
     type = "ssh"
     user = "centos"
-    private_key = file("${path.module}/id.rsa")
+    private_key = file("${path.module}/id_rsa")
     host = "${self.public_ip}"
   }
 
