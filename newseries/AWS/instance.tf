@@ -13,6 +13,7 @@ resource "aws_instance" "keyur" {
   #!/bin/bash
   sudo dnf install nginx -y
   sudo systemctl start nginx
+  sudo echo "Hello Keyur" >/usr/share/nginx/html/index.html
   EOF
 }
 
