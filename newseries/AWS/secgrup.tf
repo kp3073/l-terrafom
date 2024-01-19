@@ -3,16 +3,14 @@ resource "aws_security_group" "allow_pots" {
   name        = "allow_ports"
   description = "Allow PORTS inbound traffic and all outbound traffic"
 
-  dynamic "ingress" {
-    for_each = var.ports
-    iterator = new
-    content {
+ingress {
+
       from_port   = 0
       to_port     = 0
-      protocol    = "tcp"
+      protocol    = "-1"
       cidr_blocks = ["0.0.0.0/0"]
     }
-  }
+
   egress {
     from_port        = 0
     to_port          = 0
