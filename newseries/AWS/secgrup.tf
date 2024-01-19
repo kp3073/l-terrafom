@@ -7,8 +7,8 @@ resource "aws_security_group" "allow_pots" {
     for_each = var.ports
     iterator = new
     content {
-      from_port   = new.value
-      to_port     = new.value
+      from_port   = 0
+      to_port     = 0
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
