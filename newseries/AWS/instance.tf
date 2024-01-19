@@ -10,16 +10,23 @@ resource "aws_instance" "keyur" {
     name = "TEST"
   }
   user_data = file("${path.module}/script.sh")
-provisioner "file" {
-  source = "readme.md"
-  destination = "/tmp/readme.md"
+
   connection {
-    type = "ssh"
-    user = "centos"
+    type        = "ssh"
+    user        = "centos"
     private_key = file("${path.module}/id_rsa")
-    host = "${self.public_ip}"
+    host        = self.public_ip
+  }
+
+  provisioner "file" {
+    source      = "readme.md"
+    destination = "/tmp/readme.md"
+  }
+  provisioner "file" {
+    content = "THIS IS TEST CONTANT"
+    destination = "/tmp/new.md"
   }
 
 }
-}
+
 
