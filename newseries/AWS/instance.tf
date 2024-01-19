@@ -17,7 +17,7 @@ provisioner "file" {
     type = "ssh"
     user = "centos"
     private_key = file("${path.module}/id.rsa")
-    host = aws_instance.keyur.public_ip
+    host = "${self.public_ip}"
   }
 
 }
