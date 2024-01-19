@@ -10,5 +10,16 @@ resource "aws_instance" "keyur" {
     name = "TEST"
   }
   user_data = file("${path.module}/script.sh")
+provisioner "file" {
+  source = "readme.md"
+  destination = "/tmp/readme.md"
+  connection {
+    type = "ssh"
+    user = "centos"
+    private_key = file("${path.module}/id.rsa")
+    host = aws_instance.keyur.public_ip
+  }
+
+}
 }
 
