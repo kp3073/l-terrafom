@@ -36,6 +36,16 @@ resource "aws_instance" "keyur" {
     command = "echo ${self.private_ip} privateip.txt"
   }
 
+  provisioner "remote-exec" {
+    inline = [
+      "ifconfig > /tmp/output.txt"
+      "echo 'hello Keyur' >>/tmp/new.txt"
+    ]
+  }
+
+  provisioner "remote-exec" {
+    script = "./testscript.sh"
+  }
 }
 
 
