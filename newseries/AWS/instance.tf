@@ -38,8 +38,7 @@ resource "aws_instance" "keyur" {
 
   provisioner "remote-exec" {
     inline = [
-      "ifconfig > /tmp/output.txt"
-      "echo 'hello Keyur' >>/tmp/new.txt"
+      "ifconfig >/tmp/output.txt"
     ]
   }
 
