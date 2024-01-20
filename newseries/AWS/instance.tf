@@ -31,6 +31,11 @@ resource "aws_instance" "keyur" {
     command = "echo${self.public_ip} >/tmp/pubilicip.txt"
   }
 
+  provisioner "local-exec" {
+    working_dir = "/tmp/"
+    command = "echo ${self.private_ip} privateip.txt"
+  }
+
 }
 
 
