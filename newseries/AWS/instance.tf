@@ -6,7 +6,7 @@ resource "aws_instance" "keyur" {
   instance_type          = var.machine_type
   vpc_security_group_ids = ["${aws_security_group.allow_pots.id}"]
   key_name               = aws_key_pair.key.key_name
-  tags                   = {
+  tags = {
     name = "TEST"
   }
   user_data = file("${path.module}/script.sh")
@@ -27,9 +27,9 @@ resource "aws_instance" "keyur" {
     destination = "/tmp/new.md"
   }
 
-  provisioner  "local-exec" {
-  command = "ifconfig"
-}
+  provisioner "local-exec" {
+    command = "echo${self.public_ip} >/tmp/pubilicip.txt"
+  }
 
 }
 
