@@ -28,7 +28,7 @@ resource "aws_instance" "keyur" {
   }
 
   provisioner "local-exec" {
-    command = "echo${self.public_ip} >/tmp/pubilicip.txt"
+    command = "echo ${self.public_ip} >>/tmp/pubilicip.txt"
   }
 
   provisioner "local-exec" {
