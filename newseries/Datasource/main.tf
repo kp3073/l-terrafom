@@ -9,7 +9,7 @@
 
 data "aws_ami" "centos" {
   most_recent = true
-  owner       = ["973714476881"]
+  owners       = ["973714476881"]
 
 
   filter {
