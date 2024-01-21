@@ -33,7 +33,7 @@ resource "aws_instance" "keyur" {
 
   provisioner "local-exec" {
     working_dir = "/tmp/"
-    command = "echo ${self.private_ip} privateip.txt"
+    command     = "echo ${self.private_ip} privateip.txt"
   }
 
   provisioner "remote-exec" {
