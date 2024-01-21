@@ -7,7 +7,7 @@
 #    Name = "HelloWorld"
 #  }
 
-data "aws_ami" "centos" {
+data "aws_ami" "Centos" {
   most_recent = true
   owners       = ["973714476881"]
 
@@ -30,5 +30,5 @@ data "aws_ami" "centos" {
 }
 
 output aws_ami {
-  value = data.aws_ami.centos.id
+  value = data.aws_ami.Centos.id
 }
