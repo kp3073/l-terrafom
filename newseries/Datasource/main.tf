@@ -22,3 +22,7 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+output "aws_id" {
+  value = "${data.aws_ami.centos.id}"
+}
