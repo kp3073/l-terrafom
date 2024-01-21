@@ -27,9 +27,8 @@ data "aws_ami" "centos" {
     values = ["hvm"]
   }
 
-  output aws_ami {
-    value = data.aws_ami.centos.id
-  }
+}
 
-
+output aws_ami {
+  value = data.aws_ami.centos.id
 }
