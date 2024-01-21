@@ -1,16 +1,5 @@
-##create EC2 instance
-#resource "aws_instance" "web" {
-#  ami           = "${data.aws_ami.centos.id}"
-#  instance_type = "t3.micro"
-#
-#  tags = {
-#    Name = "HelloWorld"
-#  }
-
-data "aws_ami" "Centos" {
+data "aws_ami" "centos" {
   most_recent = true
-  owners       = ["973714476881"]
-
 
   filter {
     name   = "name"
@@ -18,17 +7,18 @@ data "aws_ami" "Centos" {
   }
 
   filter {
-    name   = "Root device type"
-    values = ["EBS"]
-  }
-
-  filter {
-    name   = "Virtualization type"
+    name   = "virtualization-type"
     values = ["hvm"]
   }
 
+  owners = ["973714476881"] # Canonical
 }
 
-output aws_ami {
-  value = data.aws_ami.Centos.id
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.centos.id
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
 }
