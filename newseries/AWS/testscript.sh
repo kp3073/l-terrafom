@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ls -lter > /tmp/ls.txt"
+echo "ls -lter"  > /tmp/ls.txt
