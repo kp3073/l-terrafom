@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "terraforms2578"
+    key = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 resource "aws_instance" "keyur" {
   ami           = data.aws_ami.image_id
   instance_type = var.instance_type
