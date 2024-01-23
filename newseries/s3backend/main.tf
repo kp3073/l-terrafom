@@ -7,7 +7,7 @@ terraform {
 }
 
 resource "aws_instance" "keyur" {
-  ami           = data.aws_ami.image_id
+  ami           = "${data.aws_ami.image_id.id}"
   instance_type = var.instance_type
 }
 
