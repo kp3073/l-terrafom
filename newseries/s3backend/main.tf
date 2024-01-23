@@ -8,14 +8,14 @@ data "aws_ami" "image_id" {
   owners = [973714476881]
   filter {
     name   = "name"
-    values = [Centos-8-DevOps-Practice]
+    values = ["Centos-8-DevOps-Practice"]
   }
   filter {
     name   = "Virtualization type"
-    values = [hvm]
+    values = ["hvm"]
   }
   filter {
     name   = "Root device type"
-    values = [ebs]
+    values = ["ebs"]
   }
 }
