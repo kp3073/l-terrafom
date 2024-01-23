@@ -1,5 +1,5 @@
 variable "instance_type" {
-  type = string
+  type        = string
   description = "Image Type for instance"
-  default = "t2-micro"
+  default     = "t2-micro"
 }
