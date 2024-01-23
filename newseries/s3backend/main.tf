@@ -13,17 +13,18 @@ resource "aws_instance" "keyur" {
 
 
 data "aws_ami" "centos" {
-  owners = [973714476881]
+  most_recent = "true"
+  owners = ["973714476881"]
   filter {
     name   = "name"
     values = ["Centos-8-DevOps-Practice"]
   }
   filter {
-    name   = "Virtualization type"
+    name   = "virtualization-type"
     values = ["hvm"]
   }
   filter {
-    name   = "Root device type"
+    name   = "root-device-type"
     values = ["ebs"]
   }
 }
