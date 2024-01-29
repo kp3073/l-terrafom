@@ -1,4 +1,4 @@
 variable "mybucketname" {
   type    = string
-  default = "aligntunewebsite2023"
+  default = "mywebsitealigntune2023"
 }
