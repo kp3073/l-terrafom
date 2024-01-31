@@ -1,3 +1,3 @@
-#variable "access_key" {
-#  default =
-#}
+variable "s3bucketname" {
+  default = "aligntune2578s3"
+}

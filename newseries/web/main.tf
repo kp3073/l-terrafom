@@ -1,8 +1,25 @@
-resource "aws_s3_bucket" "example" {
-  bucket = "terraformaligntunes3"
+resource "aws_s3_bucket" "mybucket" {
+  bucket = var.s3bucketname
 
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
   }
+}
+
+resource "aws_s3_bucket_ownership_controls" "example" {
+  bucket = aws_s3_bucket.mybucket.id
+
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "mybucket" {
+  bucket = aws_s3_bucket.mybucket.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 }
