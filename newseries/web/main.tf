@@ -24,7 +24,7 @@ resource "aws_s3_bucket_public_access_block" "mybucket" {
   restrict_public_buckets = false
 }
 
-resource "aws_s3_bucket_acl" "example" {
+resource "aws_s3_bucket_acl" "mybucket" {
   depends_on = [
     aws_s3_bucket_ownership_controls.example,
     aws_s3_bucket_public_access_block.mybucket,
@@ -63,4 +63,4 @@ resource "aws_s3_bucket_website_configuration" "website" {
     key = "error.html"
   }
 
-  depends_on = [aws_s3_bucket_acl.example]
+  depends_on = [aws_s3_bucket_acl.mybucket]
